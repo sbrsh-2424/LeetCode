@@ -2,20 +2,21 @@ class Solution {
 
     public int[] twoSum(int[] nums, int target) {
          int len = nums.length;
-         int i =0, j = 0;
+         int l =0, k = 0;
 
          outer:
-         for(;i<len;i++){
+         for(int i=0;i<len;i++){
             inner:
-            for(j= i+1;j<len;j++){
+            for(int j=i+1;j<len;j++){
                 if(nums[i]+nums[j]==target){
+                    l = i; k = j;
                     break outer;
                 }
             }
          }
 
-         
+         int[] result = {l,k};
 
-         return new int[] {i,j};
+         return result;
     }
 }
